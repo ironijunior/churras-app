@@ -14,7 +14,7 @@
     <br />
     <ul>
       <li><router-link :to="'/login'">Login</router-link></li>
-      <li><router-link :to="'/login'">Sign Up</router-link></li>
+      <li><router-link :to="'/signUp'">Sign Up</router-link></li>
     </ul>
   </div>
 </template>
