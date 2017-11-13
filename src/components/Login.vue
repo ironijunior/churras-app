@@ -32,7 +32,6 @@
           quote: ''
         }
       },
-
       methods: {
         getQuote() {
           this.$http.get('echo.jsontest.com/id/1/nome/italinho/email/iojasijoasi', (data) => {
