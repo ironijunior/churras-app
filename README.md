@@ -1,6 +1,8 @@
 # churras-app
 Webapp to organize events, parties and barbecues.
 
-*Executing:
+### Executing
+```
 npm install
 npm run dev
+```
