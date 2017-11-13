@@ -24,7 +24,7 @@
 
             <md-button class="md-raised md-primary button-line">Sign Up</md-button>
 
-            <md-card-content>Already have an account? <a v-link="'signup'">Log in here</a>.</md-card-content>
+            <md-card-content>Already have an account? <a v-link="'login'">Log in here</a>.</md-card-content>
           </form>
       </md-card>
     </div>

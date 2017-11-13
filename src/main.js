@@ -12,27 +12,17 @@ Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(VueMaterial)
 
-new Vue({
+const app = new Vue({
+  router,
   el: '#app',
   render: h => h(Login)
 })
 
-export var router = new VueRouter()
+const routes = [
+    { path: '/home', component: Home },
+    { path: '/login', component: Login },
+    { path: '/signup', component: SignUp },
+    { path: '*', redirect: '/home' }
+]
 
-router.map({
-  '/home': {
-    component: Home
-  },
-  '/login': {
-    component: Login
-  },
-  '/signup': {
-    component: SignUp
-  }
-})
-
-router.redirect({
-  '*': '/home'
-})
-
-router.start(Home, '#app')
+const router = new VueRouter({ routes })
