@@ -1,20 +1,20 @@
 <template>
-  <div id="app">
+  <div id="home">
     <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <hr></hr>
+    <br />
+    <h2>Next Events</h2>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li><a href="https://vuejs.org" target="_blank">#1 Riachuleto - Done</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank">#2 Riachuleto - Coming</a></li>
+      <li><a href="https://chat.vuejs.org" target="_blank">Party Hard</a></li>
+      <li><a href="https://twitter.com/vuejs" target="_blank">LA la LA la</a></li>
     </ul>
-    <h2>Ecosystem</h2>
+    <br />
     <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+      <li><router-link :to="'/login'">Login</router-link></li>
+      <li><router-link :to="'/login'">Sign Up</router-link></li>
     </ul>
   </div>
 </template>
@@ -23,14 +23,14 @@
 export default {
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to ChurrasCumbras!'
     }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
+#home {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

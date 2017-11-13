@@ -38,7 +38,7 @@
 
             <md-card-content>
               Don't have an account?
-              <a v-link="'/signup'">Create one</a>
+              <router-link :to="'/signup'">Create one</router-link>.
             </md-card-content>
           </form>
       </md-card>
