@@ -1,9 +1,5 @@
 <template>
     <div>
-      <md-toolbar>
-          <h2 class="md-title" style="flex: 1">Churrascumbras</h2>
-      </md-toolbar>
-      <md-card class="container" style="margin-top: 90px; padding: 10px">
           <form action="/">
 
             <h2 class="md-title card-heading">Sign Up</h2>
@@ -28,7 +24,6 @@
               <router-link :to="'login'">Log in here</router-link>.
             </md-card-content>
           </form>
-      </md-card>
     </div>
 </template>
 
