@@ -3,11 +3,9 @@
    <md-toolbar>
           <h2 class="md-title" style="flex: 1">Churrascumbras</h2>
    </md-toolbar>
-   <md-card class="container" style="margin-top: 90px; padding: 10px">
-    <transition name="pagina">
+   <transition name="pagina">
       <router-view></router-view>
-    </transition>
-    </md-card>
+   </transition>
 
   </div>
 </template>
@@ -15,7 +13,7 @@
 
 import { routes }  from './routes';
 
-export default { 
+export default {
   data() {
     return {
       routes

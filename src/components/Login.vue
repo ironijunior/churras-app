@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <md-card class="container" style="margin-top: 90px; padding: 10px">
+      <div>
           <form action="/">
             <h2 class="md-title card-heading">Login</h2>
 
@@ -38,6 +39,7 @@
             </md-card-content>
           </form>
     </div>
+  </md-card>
 </template>
 
 <script>
