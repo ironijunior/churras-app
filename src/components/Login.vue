@@ -1,67 +1,37 @@
 <template>
-    <md-card class="container" style="margin-top: 90px; padding: 10px">
-      <div>
-          <form action="/">
-            <h2 class="md-title card-heading">Login</h2>
-
-            <div class="error-message" v-if="error">
-              <p>{{ error }}</p>
-            </div>
-
-            <md-input-container>
-              <label>Email</label>
-              <md-input
-                  class="field-line"
-                  placeholder="Email"
-                  v-model="credentials.email">
-              </md-input>
-            </md-input-container>
-
-            <md-input-container md-has-password>
-              <label>Password</label>
-              <md-input
-                  class="field-line"
-                  placeholder="Password"
-                  type="password"
-                  v-model="credentials.password">
-              </md-input>
-            </md-input-container>
-
-            <md-button
-                class="md-raised md-primary button-line"
-                @click="submit()">
-              Login
-            </md-button>
-
-            <md-card-content>
-              Don't have an account?
-              <router-link :to="'/signup'">Create one</router-link>.
-            </md-card-content>
-          </form>
-    </div>
-  </md-card>
+  <v-layout column>
+    <v-flex xs12 class="text-xs-center" mt-5>
+      <h3>Sign In</h3>
+    </v-flex>
+    <v-flex xs12 sm6 offset-sm3 mt-3>
+      <form>
+        <v-layout column>
+          <v-flex>
+            <v-text-field
+              name="email"
+              label="Email"
+              id="email"
+              type="email"
+              required></v-text-field>
+          </v-flex>
+          <v-flex>
+            <v-text-field
+              name="password"
+              label="Password"
+              id="password"
+              type="password"
+              required></v-text-field>
+          </v-flex>
+          <v-flex class="text-xs-center" mt-5>
+            <v-btn primary type="submit">Sign In</v-btn>
+          </v-flex>
+        </v-layout>
+      </form>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-    export default {
-      data() {
-        return {
-          credentials: {
-            email: '',
-            password: ''
-          },
-          error: ''
-        }
-      },
-      methods: {
-        submit() {
-          var credentials = {
-            email: this.credentials.email,
-            password: this.credentials.password
-          }
-          console.log(this.credentials);
-          auth.login(this.credential, 'secret');
-        }
-      }
-    }
+  export default {
+  }
 </script>

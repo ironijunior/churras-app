@@ -63,26 +63,34 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      people: [{
-        name: 'Ironi',
-        floor: 2
-      },{
-        name: 'Italo',
-        floor: 2
-      },{
-        name: 'Zotto',
-        floor: 4
-      },{
-        name: 'Henrique',
-        floor: 2
-      },{
-        name: 'Cesar',
-        floor: 1
-      }],
-      msg: 'Welcome to ChurrasCumbras!'
-    }
+      people: [
+        {
+          name: "Ironi",
+          floor: 2
+        },
+        {
+          name: "Italo",
+          floor: 2
+        },
+        {
+          name: "Zotto",
+          floor: 4
+        },
+        {
+          name: "Henrique",
+          floor: 2
+        },
+        {
+          name: "Cesar",
+          floor: 1
+        }
+      ],
+      msg: "Welcome to ChurrasCumbras!"
+    };
   }
-}
+};
 </script>
+
+
