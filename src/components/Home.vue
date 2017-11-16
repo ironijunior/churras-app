@@ -1,63 +1,43 @@
 <template>
-    <div style="margin-top: 10px">
-      <md-card>
-        <md-card-media>
-          <img src="https://abrilvip.files.wordpress.com/2016/09/churras5.jpg?quality=70&strip=info&w=620" alt="People">
-        </md-card-media>
+  <div id="e3"
+    style="max-width: 1980px; margin: auto;">
 
-        <md-card-header>
-          <div class="md-title">#2 Riachuleto</div>
-          <div class="md-subhead">Segunda edição do Riachuleto, o churras da Riachuelo!</div>
-        </md-card-header>
-      </md-card>
+    <v-toolbar class="orange">
+      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <v-toolbar-title>Churrascumbras</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon>
+        <v-icon>search</v-icon>
+      </v-btn>
+    </v-toolbar>
 
-      <br />
-      <md-card class="md-accent">
-        <md-card-header>
-          <div class="md-title">Confirme sua presença!</div>
-        </md-card-header>
-        <md-card-content>
-          <p><md-checkbox
-            id="my-test2"
-            name="my-test2"
-            v-model="checkbox"
-            class="md-primary">
-            Vai beber? (bebida alcoólica)
-          </md-checkbox></p>
-          <p><md-checkbox
-            id="my-test1"
-            name="my-test1"
-            v-model="checkbox"
-            class="md-primary">
-            Vai comer?
-          </md-checkbox></p>
-          <md-button class="md-raised md-primary">Participar</md-button>
-        </md-card-content>
-      </md-card>
+    <v-container fluid
+      style="min-height: 0;"
+      grid-list-lg>
+      <v-layout row wrap>
 
-      <br />
-      <md-card>
-        <md-card-header>
-          <div class="md-title">Participantes</div>
-        </md-card-header>
-          <md-list class="custom-list md-double-line">
-            <md-list-item v-for="person in people">
-              <md-avatar>
-                <img src="https://placeimg.com/40/40/people/1" alt="People">
-              </md-avatar>
-
-              <div class="md-list-text-container">
-                <span>{{ person.name }}</span>
-                <span>{{ person.floor }}°</span>
+        <v-flex xs12 v-for="event in events">
+          <v-card>
+            <v-card-media
+              :src="event.image" height="200px">
+            </v-card-media>
+            <v-card-title primary-title>
+              <div>
+                <h3 class="headline mb-0">{{event.name}}</h3>
               </div>
+            </v-card-title>
+            <v-card-text>
+              <div class="text-xs-left grey--text">{{event.descr}}</div>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn class="orange" v-if="event.open">Join</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
 
-              <md-button class="md-icon-button md-list-action">
-                <md-icon class="md-primary">phone</md-icon>
-              </md-button>
-              <md-divider class="md-inset"></md-divider>
-            </md-list-item>
-        </md-list>
-      </md-card>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
@@ -65,26 +45,24 @@
 export default {
   data() {
     return {
-      people: [
+      events: [
         {
-          name: "Ironi",
-          floor: 2
+          name: "#2 Riachuleto",
+          descr: "Segunda edição do churras mais TOP do time da Riachuelo!",
+          image: "https://revistasaboresdosul.com.br/wp-content/uploads/2015/09/semana-farroupilha-no-peixe-urbano-traz-grandes-ofertas-2.jpg",
+          open: true
         },
         {
-          name: "Italo",
-          floor: 2
+          name: "Rafting Maroto",
+          descr: "Rafting do time da Riachuelo!",
+          image: "https://www.raftingtara.com/files/rafting/rafting-10.jpg",
+          open: true
         },
         {
-          name: "Zotto",
-          floor: 4
-        },
-        {
-          name: "Henrique",
-          floor: 2
-        },
-        {
-          name: "Cesar",
-          floor: 1
+          name: "Churras na Tálbua",
+          descr: "Coming...",
+          image: "http://edcampmagic.com/wp-content/uploads/2015/10/coming-soon-lg-rotate.png",
+          open: false
         }
       ],
       msg: "Welcome to ChurrasCumbras!"
@@ -92,5 +70,3 @@ export default {
   }
 };
 </script>
-
-

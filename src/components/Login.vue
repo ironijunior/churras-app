@@ -1,32 +1,38 @@
 <template>
-  <v-layout column>
-    <v-flex xs12 class="text-xs-center" mt-5>
-      <h3>Sign In</h3>
-    </v-flex>
-    <v-flex xs12 sm6 offset-sm3 mt-3>
-      <form>
-        <v-layout column>
-          <v-flex>
-            <v-text-field
-              name="email"
-              label="Email"
-              id="email"
-              type="email"
-              required></v-text-field>
-          </v-flex>
-          <v-flex>
-            <v-text-field
-              name="password"
-              label="Password"
-              id="password"
-              type="password"
-              required></v-text-field>
-          </v-flex>
-          <v-flex class="text-xs-center" mt-5>
-            <v-btn primary type="submit">Sign In</v-btn>
-          </v-flex>
-        </v-layout>
-      </form>
+  <v-layout>
+    <v-flex xs12 ma-5>
+      <v-card class="elevation-9">
+        <v-card-title primary-title class="text-xs-center">
+          <div style="width:-webkit-fill-available" class="text-xs-center">
+            <h3 class="text-xs-center headline mb-0">Sign In</h3>
+          </div>
+        </v-card-title>
+        <v-card-text>
+          <form>
+            <v-layout column>
+              <v-flex>
+                <v-text-field
+                  name="email"
+                  label="Email"
+                  id="email"
+                  type="email"
+                  required></v-text-field>
+              </v-flex>
+              <v-flex>
+                <v-text-field
+                  name="password"
+                  label="Password"
+                  id="password"
+                  type="password"
+                  required></v-text-field>
+              </v-flex>
+              <v-flex class="text-xs-center" mt-3>
+                <v-btn primary type="submit">Sign In</v-btn>
+              </v-flex>
+            </v-layout>
+          </form>
+        </v-card-text>
+      </v-card>
     </v-flex>
   </v-layout>
 </template>

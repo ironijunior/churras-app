@@ -1,48 +1,60 @@
 <template>
-      <md-card class="container" style="margin-top: 90px; padding: 10px">
-        <div>
-          <form action="/">
-
-            <h2 class="md-title card-heading">Sign Up</h2>
-            <md-input-container>
-              <label>Name</label>
-              <md-input class="field-line" placeholder="Name"></md-input>
-            </md-input-container>
-
-            <md-input-container>
-              <label>Email</label>
-              <md-input class="field-line" placeholder="Email"></md-input>
-            </md-input-container>
-
-            <md-input-container md-has-password>
-              <label>Password</label>
-              <md-input class="field-line" placeholder="Password" type="password"></md-input>
-            </md-input-container>
-
-            <md-button class="md-raised md-primary button-line">Sign Up</md-button>
-
-            <md-card-content>Already have an account?
-              <router-link :to="'login'">Log in here</router-link>.
-            </md-card-content>
+  <v-layout>
+    <v-flex xs12 ma-5>
+      <v-card class="elevation-9">
+        <v-card-title primary-title class="text-xs-center">
+          <div style="width:-webkit-fill-available" class="text-xs-center">
+            <h3 class="text-xs-center headline mb-0">Sign Up</h3>
+          </div>
+        </v-card-title>
+        <v-card-text>
+          <form>
+            <v-layout column>
+              <v-flex>
+                <v-text-field
+                  name="name"
+                  label="Name"
+                  id="name"
+                  type="text"
+                  required></v-text-field>
+              </v-flex>
+              <v-flex>
+                <v-text-field
+                  name="email"
+                  label="Email"
+                  id="email"
+                  type="email"
+                  required></v-text-field>
+              </v-flex>
+              <v-flex>
+                <v-text-field
+                  name="password"
+                  label="Password"
+                  id="password"
+                  type="password"
+                  required></v-text-field>
+              </v-flex>
+              <v-flex class="text-xs-center" mt-3>
+                <v-btn primary type="submit">Sign Up</v-btn>
+              </v-flex>
+            </v-layout>
           </form>
-    </div>
-  </md-card>
+        </v-card-text>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
     export default {
       data() {
         return {
-          quote: ''
+          data: ''
         }
       },
 
       methods: {
-        getQuote() {
-          this.$http.get('echo.jsontest.com/id/1/nome/italinho/email/iojasijoasi', (data) => {
-            this.quote = data;
-          }).error((err) => { console.log(err); })
-        }
+
       }
     }
 </script>
