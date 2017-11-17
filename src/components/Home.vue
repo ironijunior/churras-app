@@ -3,12 +3,9 @@
     style="max-width: 1980px; margin: auto;">
 
     <v-toolbar class="orange">
-      <v-toolbar-side-icon></v-toolbar-side-icon>
       <v-toolbar-title>Churrascumbras</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>search</v-icon>
-      </v-btn>
+      <v-toolbar-side-icon></v-toolbar-side-icon>
     </v-toolbar>
 
     <v-container fluid
@@ -31,11 +28,10 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn class="orange" v-if="event.open">Join</v-btn>
+              <v-btn class="orange" slot="activator" v-if="event.open"  @click.native="show = !show">Join</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
-
       </v-layout>
     </v-container>
   </div>
