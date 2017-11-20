@@ -1,10 +1,12 @@
 <template>
-  <div class="corpo">
-   <transition name="pagina">
-      <router-view></router-view>
-   </transition>
+  <v-app light>
+    <div class="corpo">
+     <transition name="pagina">
+        <router-view></router-view>
+     </transition>
 
-  </div>
+    </div>
+  </v-app>
 </template>
 <script>
 

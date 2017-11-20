@@ -4,7 +4,9 @@ import SignUp from './components/SignUp.vue';
 
 export const routes = [
 
-    { path: '', component: Login, titulo: 'Login' },
-    { path: '/home', component: Home, titulo: 'Home' }, 
-    { path: '/signUp', component: SignUp, titulo: 'SignUp' }
+    { path: '*', redirect: '/login' },
+    { path: '/', redirect: '/login' },
+    { path: '/login', component: Login, titulo: 'Login' },
+    { path: '/signUp', component: SignUp, titulo: 'SignUp' },
+    { path: '/home', component: Home, titulo: 'Home', meta: {requiresAuth: true} },
 ];
