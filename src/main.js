@@ -26,16 +26,17 @@ router.beforeEach((to, from, next) => {
 });
 
 let app;
-var config = {
-    apiKey: "AIzaSyDsomwXBi6FJlFDDLHls6dYbzwZDeRrkfo",
-    authDomain: "churras-app.firebaseapp.com",
-    databaseURL: "https://churras-app.firebaseio.com",
-    projectId: "churras-app",
-    storageBucket: "",
-    messagingSenderId: "803414096922"
-}
 
+var config = {
+    apiKey: "AIzaSyCk_5CndOT19hU7FbxhOoJo2mdPEjwKHW8",
+    authDomain: "riachuleto-126bc.firebaseapp.com",
+    databaseURL: "https://riachuleto-126bc.firebaseio.com",
+    projectId: "riachuleto-126bc",
+    storageBucket: "riachuleto-126bc.appspot.com",
+    messagingSenderId: "223890773425"
+};
 firebase.initializeApp(config);
+
 firebase.auth().onAuthStateChanged(function(user) {
   if(!app) {
     app = new Vue({

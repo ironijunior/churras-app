@@ -14,7 +14,7 @@
           </v-alert>
           <br />
 
-          <v-form v-model="valid" ref="form" lazy-validation>
+          <v-form v-model="valid" ref="form" lazy-validation v-on:submit.prevent="signup">
             <v-layout column>
               <v-flex>
                 <v-text-field
@@ -42,12 +42,12 @@
                   counter></v-text-field>
               </v-flex>
               <v-flex class="text-xs-center" mt-3>
-                <v-btn color="primary" v-on:click="signup">Sign Up</v-btn>
+                <v-btn type="submit" color="primary">Sign Up</v-btn>
               </v-flex>
             </v-layout>
           </v-form>
           <br />
-          <p>Already have an account? <router-link to="/login">Log in</router-link>!</p>
+          <p class="text-xs-center">Already have an account? <router-link to="/login">Log in</router-link>!</p>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -81,17 +81,15 @@
           firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
             (user) => {
               firebase.auth().signInWithEmailAndPassword(dis.email, dis.password).then(
-                (user) => {
-                  dis.$router.replace('/home');
-                },
-                (err) => {
-                  alert("Oops" + err.message);
-                  dis.errors = err;
-                }
-              );
+					(user) => {
+						dis.$router.replace('/home');
+					},
+					(err) => {
+						dis.errors = err;
+					}
+				);
             },
             (err) => {
-              alert("Oops" + err.message);
               dis.errors = err;
             }
           );

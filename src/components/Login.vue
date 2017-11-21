@@ -14,7 +14,7 @@
           </v-alert>
           <br />
 
-          <v-form v-model="valid" ref="form" lazy-validation>
+          <v-form v-model="valid" ref="form" lazy-validation v-on:submit.prevent="login">
             <v-layout column>
               <v-flex>
                 <v-text-field
@@ -42,12 +42,12 @@
                   counter></v-text-field>
               </v-flex>
               <v-flex class="text-xs-center" mt-3>
-                <v-btn color="primary" v-on:click="login">Sign In</v-btn>
+                <v-btn type="submit" color="primary">Sign In</v-btn>
               </v-flex>
             </v-layout>
           </v-form>
           <br />
-          <p>Don't have an account? <router-link to="/signup">Create one</router-link>!</p>
+          <p class="text-xs-center">Don't have an account? <router-link to="/signup">Create one</router-link>!</p>
         </v-card-text>
       </v-card>
     </v-flex>
