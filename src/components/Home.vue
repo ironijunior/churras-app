@@ -13,7 +13,7 @@
       grid-list-lg>
       <v-layout row wrap>
 
-        <v-flex xs12 v-for="event in events">
+        <v-flex xs6 v-for="(event, index) in events" v-bind:key="index">
           <v-card color="grey lighten-4" class="elevation-4">
             <v-card-media
               :src="event.image" height="200px">
