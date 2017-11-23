@@ -78,21 +78,24 @@
       methods: {
         signup: function() {
           var dis = this;
-          firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-            (user) => {
-              firebase.auth().signInWithEmailAndPassword(dis.email, dis.password).then(
-					(user) => {
-						dis.$router.replace('/home');
-					},
-					(err) => {
-						dis.errors = err;
-					}
-				);
-            },
-            (err) => {
-              dis.errors = err;
-            }
-          );
+
+          if(this.$refs.form.validate()) {
+              firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+                (user) => {
+                  firebase.auth().signInWithEmailAndPassword(dis.email, dis.password).then(
+    			          (user) => {
+    	                dis.$router.replace('/home');
+                    },
+          					(err) => {
+          						dis.errors = err;
+          					}
+    				      );
+                },
+                (err) => {
+                  dis.errors = err;
+                }
+              );
+          }
         }
       }
     }

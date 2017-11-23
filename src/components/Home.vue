@@ -13,7 +13,7 @@
       grid-list-lg>
       <v-layout row wrap>
 
-        <v-flex xs6 v-for="(event, index) in events" v-bind:key="index">
+        <v-flex xs12 v-for="(event, index) in events" v-bind:key="index">
           <v-card color="grey lighten-4" class="elevation-4">
             <v-card-media
               :src="image" height="200px">
@@ -34,7 +34,6 @@
           </v-card>
         </v-flex>
       </v-layout>
-      <v-btn class="blue" v-on:click="test">Test</v-btn>
     </v-container>
   </div>
 </template>
@@ -58,43 +57,25 @@ export default {
           dis.$router.replace('login');
         });
       },
-      test: function() {
+      loadEvents: function() {
         var dis = this;
-        var database = firebase.database();
-        var eventsRef = database.ref('events');
+        var refEvents = firebase.database().ref('events');
 
-        database.ref('events').on('value', function(snapshot) {
+        refEvents.once('value').then(function(snapshot) {
           dis.events = snapshot.val();
-          console.info('Array:', dis.events);
         });
 
-        var eventos = [{
-          "name": "Churrass na Talbua",
-          "descr": "Coming...",
-          "open": false,
-          "when": "15/12/2017"
-        }, {
-          name: "#2 Riachuleto",
-          descr: "Segunda edição do churras mais TOP da Riachuelo!",
-          open: true,
-          when: "18/01/2018"
-        }, {
-          name: "Rafting Maroto",
-          descr: "Rafting da Riachuelo!",
-          open: true,
-          when: "09/12/2017"
-        }];
-
-        eventos.forEach(function(event) {
-          var updates = {};
-          updates['/events/' + dis.newEventKey()] = event;
-          console.log(database.ref().update(updates));
+        refEvents.on('value', function(snapshot) {
+          dis.events = snapshot.val();
         });
-      },
-
-      newEventKey: function() {
-        return firebase.database().ref().child('events').push().key;
       }
+  },
+  mounted() {
+    //Run after the instance has just been mounted
+    this.loadEvents();
+
+    //Run right before the mounting begins: the render function is about to be called for the first time.
+    //this.beforeMount()
   }
 };
 </script>
