@@ -48,6 +48,15 @@
                   required></v-text-field>
               </v-flex>
               <v-flex>
+                <v-text-field
+                  name="image"
+                  label="Image URL"
+                  id="image"
+                  type="text"
+                  v-model="event.image">
+                </v-text-field>
+              </v-flex>
+              <v-flex>
                 <v-switch label="Open"
                   v-model="event.open"
                   color="orange darken-3"
@@ -76,6 +85,7 @@
             name: '',
             when: '',
             descr: '',
+            image: '',
             open: false
           },
           e2: true,

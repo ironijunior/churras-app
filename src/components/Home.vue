@@ -16,7 +16,7 @@
         <v-flex xs12 v-for="(event, index) in events" v-bind:key="index">
           <v-card color="grey lighten-4" class="elevation-4">
             <v-card-media
-              :src="image" height="200px">
+              :src="event.image ? event.image : image" height="200px">
             </v-card-media>
             <v-card-title primary-title>
               <div>
