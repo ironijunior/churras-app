@@ -10,28 +10,11 @@
 
     <v-container fluid
       style="min-height: 0;"
-      grid-list-lg>
+      grid-list-md>
       <v-layout row wrap>
 
-        <v-flex xs12 v-for="(event, index) in events" v-bind:key="index">
-          <v-card color="grey lighten-4" class="elevation-4">
-            <v-card-media
-              :src="event.image ? event.image : image" height="200px">
-            </v-card-media>
-            <v-card-title primary-title>
-              <div>
-                <h3 class="headline mb-0">{{event.name}}</h3>
-                <p><h5>{{event.when}}</h5></p>
-              </div>
-            </v-card-title>
-            <v-card-text>
-              <div class="text-xs-left grey--text">{{event.descr}}</div>
-            </v-card-text>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn class="orange" slot="activator" v-if="event.open">Join</v-btn>
-            </v-card-actions>
-          </v-card>
+        <v-flex xs12 sm6 v-for="(event, index) in events" v-bind:key="index">
+          <my-event :event="event"></my-event>
         </v-flex>
       </v-layout>
     </v-container>
@@ -40,8 +23,14 @@
 
 <script>
 import firebase from 'firebase'
+import Event from './Event.vue'
+
 export default {
   name: 'home',
+
+  components: {
+    'my-event' : Event
+  },
 
   data: function() {
     return {

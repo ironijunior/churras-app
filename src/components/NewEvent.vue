@@ -78,7 +78,7 @@
     import firebase from 'firebase'
 
     export default {
-      name: 'event',
+      name: 'newevent',
       data: function() {
         return {
           event: {
