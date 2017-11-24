@@ -1,5 +1,5 @@
 <template>
-  <v-card color="grey lighten-4" class="elevation-4">
+  <v-card color="grey lighten-4" class="elevation-4" height="100%">
     <v-card-media
       :src="event.image ? event.image : image" height="300">
     </v-card-media>
@@ -14,11 +14,11 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn class="orange" slot="activator" v-if="event.open" @click.native="show = !show">Join</v-btn>
+      <v-btn class="orange" slot="activator" v-if="event.open" @click.native="join">{{show ? 'Hide' : 'Join'}}</v-btn>
     </v-card-actions>
     <v-slide-y-transition>
       <v-card-text v-show="show">
-
+        <event-form :event="event" :index="index" :userEvent="userEvent"></event-form>
       </v-card-text>
     </v-slide-y-transition>
   </v-card>
@@ -26,10 +26,21 @@
 
 <script>
 import firebase from 'firebase'
+import EventForm from './EventForm.vue'
+
 export default {
   name: 'event',
+  components: {
+    EventForm
+  },
   props: {
     event : {
+      type : Object
+    },
+    index : {
+      type : String
+    },
+    userEvent : {
       type : Object
     }
   },
@@ -42,7 +53,7 @@ export default {
   methods: {
       join: function() {
         var dis = this;
-        console.log("event", dis.event.name);
+        dis.show = !dis.show;
       }
   }
 };

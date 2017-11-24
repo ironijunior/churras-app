@@ -12,9 +12,8 @@
       style="min-height: 0;"
       grid-list-md>
       <v-layout row wrap>
-
         <v-flex xs12 sm6 v-for="(event, index) in events" v-bind:key="index">
-          <my-event :event="event"></my-event>
+          <my-event :event="event" :index="index"></my-event>
         </v-flex>
       </v-layout>
     </v-container>
@@ -48,6 +47,7 @@ export default {
       },
       loadEvents: function() {
         var dis = this;
+        var user = firebase.auth().currentUser;
         var refEvents = firebase.database().ref('events');
 
         refEvents.once('value').then(function(snapshot) {
