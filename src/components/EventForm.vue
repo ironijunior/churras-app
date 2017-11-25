@@ -81,7 +81,6 @@ export default {
   mounted : function() {
     var dis = this;
     var user = firebase.auth().currentUser;
-
     var refUserEvents = firebase.database().ref('user-events').child(user.uid).child(dis.index);
 
     refUserEvents.once('value').then(function(snapshot) {
