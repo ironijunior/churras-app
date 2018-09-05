@@ -4,7 +4,8 @@
       <v-card class="elevation-9" color="grey lighten-4" flat>
         <v-card-title primary-title class="text-xs-center">
           <div style="width:-webkit-fill-available" class="text-xs-center">
-            <h3 class="text-xs-center headline mb-0">Sign Up</h3>
+            <img src="../assets/images/logo.png" width="85px" height="85px" />
+            <h3 class="text-xs-center headline mb-0">Sign up to ChurrasApp</h3>
           </div>
         </v-card-title>
         <v-card-text>
@@ -95,6 +96,8 @@
                   dis.errors = err;
                 }
               );
+          } else {
+            this.errors = { message : "Verifique os campos em vermelho!" };
           }
         }
       }

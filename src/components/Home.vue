@@ -3,9 +3,9 @@
     style="max-width: 1980px; margin: auto;">
 
     <v-toolbar color="orange">
-      <v-toolbar-title>Churrascumbras</v-toolbar-title>
+      <v-toolbar-title>ChurrasApp</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-side-icon v-on:click="logout">Logout</v-toolbar-side-icon>
+      <v-toolbar-side-icon v-on:click="logout">Exit</v-toolbar-side-icon>
     </v-toolbar>
 
     <v-container fluid
@@ -48,7 +48,7 @@ export default {
       loadEvents: function() {
         var dis = this;
         var user = firebase.auth().currentUser;
-        var refEvents = firebase.database().ref('events');
+        var refEvents = firebase.database().ref('events').orderByChild('created_at');
 
         refEvents.once('value').then(function(snapshot) {
           dis.events = snapshot.val();

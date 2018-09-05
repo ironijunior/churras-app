@@ -8,6 +8,7 @@
     </div>
   </v-app>
 </template>
+
 <script>
 
 import { routes }  from './routes';
@@ -20,3 +21,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  .corpo {
+    /*background-color: #ffc691;*/
+    background-color: #ededed;
+  }
+</style>

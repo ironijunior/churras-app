@@ -103,6 +103,7 @@
             var database = firebase.database();
 
             var updates = {};
+            dis.event.created_at = -1 * new Date();
             updates['/events/' + dis.newEventKey()] = dis.event;
             database.ref().update(updates).then(
               () => {
@@ -119,7 +120,7 @@
         },
 
         newEventKey: function() {
-          return firebase.database().ref().child('events').push().key;
+          return firebase.database().ref().child('events').orderByChild('created_at').push().key;
         },
       }
     }

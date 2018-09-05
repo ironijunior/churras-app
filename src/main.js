@@ -28,12 +28,12 @@ router.beforeEach((to, from, next) => {
 let app;
 
 var config = {
-    apiKey: "AIzaSyCk_5CndOT19hU7FbxhOoJo2mdPEjwKHW8",
-    authDomain: "riachuleto-126bc.firebaseapp.com",
-    databaseURL: "https://riachuleto-126bc.firebaseio.com",
-    projectId: "riachuleto-126bc",
-    storageBucket: "riachuleto-126bc.appspot.com",
-    messagingSenderId: "223890773425"
+  apiKey: "AIzaSyDsomwXBi6FJlFDDLHls6dYbzwZDeRrkfo",
+  authDomain: "churras-app.firebaseapp.com",
+  databaseURL: "https://churras-app.firebaseio.com",
+  projectId: "churras-app",
+  storageBucket: "churras-app.appspot.com",
+  messagingSenderId: "803414096922"
 };
 firebase.initializeApp(config);
 
