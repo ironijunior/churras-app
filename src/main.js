@@ -28,7 +28,7 @@ router.beforeEach((to, from, next) => {
 let app;
 
 var config = {
-  apiKey: "AIzaSyDsomwXBi6FJlFDDLHls6dYbzwZDeRrkfo",
+  apiKey: "???",
   authDomain: "churras-app.firebaseapp.com",
   databaseURL: "https://churras-app.firebaseio.com",
   projectId: "churras-app",
